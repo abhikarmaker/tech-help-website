@@ -118,12 +118,47 @@ section h2 {
 .cta:hover{background:#27ae60;}
 
 /* FOOTER */
-footer {
-    background:#222;
-    color:#fff;
+.footer {
+    background: linear-gradient(135deg,#222,#111);
+    color: #fff;
+    padding: 3rem 1rem 1rem;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+    font-size: 0.95rem;
+}
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+}
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 0.5rem;
+}
+.footer-brand p {margin:0;opacity:0.9;}
+.footer-links a,
+.footer-contact a {
+    display:block;
+    margin:0.4rem 0;
+    color:#1abc9c;
+    text-decoration:none;
+    transition:0.3s;
+}
+.footer-links a:hover,
+.footer-contact a:hover {color:#2ecc71;}
+.footer-bottom {
     text-align:center;
-    padding:1.2rem;
-    font-size:0.9rem;
+    opacity:0.7;
+    font-size:0.85rem;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:1rem;
 }
 
 /* FLOATING WHATSAPP BUTTON */
@@ -150,6 +185,11 @@ footer {
 /* RESPONSIVE */
 @media(max-width:600px){
     .hero img{height:90px;}
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -193,14 +233,29 @@ footer {
 </section>
 
 <!-- FOOTER -->
-<footer>
-    © 2026 EasyTech. Metro Vancouver Tech Help
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="easytech-logo.png" alt="EasyTech Logo" class="footer-logo">
+      <p>EasyTech - Metro Vancouver Tech Support</p>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:8194342389">📞 819-434-2389</a>
+      <a href="https://wa.me/18194342389" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 EasyTech. All rights reserved.</p>
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON -->
 <a id="whatsapp-btn" href="https://wa.me/18194342389" target="_blank">💬</a>
 
-<!-- ANIMATION SCRIPT -->
+<!-- SERVICE CARD ANIMATION SCRIPT -->
 <script>
 const services = document.querySelectorAll('.service');
 const observer = new IntersectionObserver(entries => {
