@@ -4,8 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EasyTech | Local Tech Support in Coquitlam, Burnaby, Surrey & Vancouver</title>
-<meta name="description" content="EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. Services: TV & sound setup, Wi-Fi & network support, smart home devices, home office setup, senior-friendly tech guidance, and small business IT assistance.">
+<meta name="description" content="EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. TV & sound setup, Wi-Fi & network support, smart home devices, home office setup, senior-friendly tech guidance, and small business IT assistance. Call or WhatsApp 819-434-2389.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Local Business Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "EasyTech",
+  "image": "https://yourwebsite.com/easytech-logo.png",
+  "@id": "https://yourwebsite.com",
+  "url": "https://yourwebsite.com",
+  "telephone": "+18194342389",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Your Street Address",
+    "addressLocality": "Coquitlam",
+    "addressRegion": "BC",
+    "postalCode": "V3K 0A1",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 49.1768374,
+    "longitude": -122.9222895
+  },
+  "sameAs": [
+    "https://www.facebook.com/groups/easytechmetrovancouver/",
+    "https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu"
+  ],
+  "openingHours": "Mo-Su 09:00-21:00",
+  "description": "EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. TV & sound setup, Wi-Fi & network support, smart home devices, home office setup, senior-friendly tech guidance, and small business IT assistance."
+}
+</script>
+
 <style>
 * {box-sizing:border-box;}
 body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;line-height:1.6;}
@@ -34,7 +68,7 @@ body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;lin
     z-index:0;
 }
 .hero img {
-    height:140px;
+    height:180px;
     width:auto;
     margin-bottom:1rem;
     z-index:1;
@@ -93,6 +127,9 @@ section h2 {
 .service.visible {opacity:1;}
 .service:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15);}
 .service h3 {margin-top:0.8rem;color:#1abc9c;}
+.service p {opacity:0.85;}
+.service .cta {margin-top:1rem;display:inline-block;background:#2ecc71;color:#fff;padding:0.8rem 1.2rem;border-radius:10px;text-decoration:none;transition:0.3s;}
+.service .cta:hover {background:#27ae60;}
 
 /* PRICING */
 .pricing {
@@ -117,8 +154,8 @@ section h2 {
 }
 .contact a {color:#fff;font-weight:bold;text-decoration:none;}
 .contact a:hover {color:#2ecc71;}
-.cta {display:inline-block;background:#2ecc71;color:#fff;padding:1rem 1.6rem;border-radius:10px;margin-top:1rem;font-weight:bold;text-decoration:none;transition:0.3s;}
-.cta:hover{background:#27ae60;}
+.contact .cta {display:inline-block;background:#2ecc71;color:#fff;padding:1rem 1.6rem;border-radius:10px;margin-top:1rem;font-weight:bold;text-decoration:none;transition:0.3s;}
+.contact .cta:hover{background:#27ae60;}
 
 /* FOOTER */
 .footer {
@@ -156,6 +193,20 @@ section h2 {
 }
 .footer-links a:hover,
 .footer-contact a:hover {color:#2ecc71;}
+.footer-social {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.footer-social img {
+    transition: transform 0.3s, opacity 0.3s;
+}
+.footer-social img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
 .footer-bottom {
     text-align:center;
     opacity:0.7;
@@ -192,11 +243,7 @@ section h2 {
 /* RESPONSIVE */
 @media(max-width:600px){
     .hero img{height:90px;}
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    .footer-container {flex-direction: column;align-items: center;text-align: center;}
 }
 </style>
 </head>
@@ -256,11 +303,33 @@ section h2 {
     </div>
 </section>
 
+<!-- BLOG / LOCAL TIPS -->
+<section id="blog">
+    <h2>Tech Tips & Local Guides</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Smart TV & Sound Setup in Metro Vancouver</h3>
+            <p>Struggling with your Smart TV or sound system? EasyTech sets up TVs and soundbars across Coquitlam, Burnaby, Surrey, and Vancouver. Call 819-434-2389 today!</p>
+            <a class="cta" href="#contact">Book Now</a>
+        </div>
+        <div class="service">
+            <h3>Wi-Fi & Network Troubleshooting</h3>
+            <p>Slow Wi-Fi? EasyTech fixes network issues in homes and small offices in Metro Vancouver. Optimize your home office or business today.</p>
+            <a class="cta" href="#contact">Book Now</a>
+        </div>
+        <div class="service">
+            <h3>Smart Home Devices Setup</h3>
+            <p>Alexa, Google Home, lights, thermostats, and cameras — EasyTech makes your home smarter in Coquitlam, Burnaby, Surrey, and Vancouver.</p>
+            <a class="cta" href="#contact">Book Now</a>
+        </div>
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
     <h2>Contact EasyTech</h2>
     <p>Call or WhatsApp: <a href="tel:8194342389">819-434-2389</a></p>
-    <a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
+    <a class="cta" href="https://wa.me/1819432389">Message on WhatsApp</a>
 </section>
 
 <!-- FOOTER -->
@@ -277,14 +346,27 @@ section h2 {
     </div>
     <div class="footer-contact">
       <a href="tel:8194342389">📞 819-434-2389</a>
-      <a href="https://wa.me/18194342389" target="_blank">💬 WhatsApp</a>
+      <a href="https://wa.me/1819432389" target="_blank">💬 WhatsApp</a>
     </div>
   </div>
+
+  <!-- Social Links -->
+  <div class="footer-social">
+      <!-- Facebook Group -->
+      <a href="https://www.facebook.com/groups/easytechmetrovancouver/" target="_blank" rel="noopener" aria-label="EasyTech Facebook Group">
+          <img src="facebook-icon.png" alt="EasyTech Facebook Group" width="32">
+      </a>
+      <!-- Google Business / Maps -->
+      <a href="https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu" target="_blank" rel="noopener" aria-label="EasyTech Google Business Profile">
+          <img src="google-icon.png" alt="EasyTech Google Business Profile" width="32">
+      </a>
+  </div>
+
   <p class="footer-bottom">© 2026 EasyTech. All rights reserved.</p>
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON -->
-<a id="whatsapp-btn" href="https://wa.me/18194342389" target="_blank">💬</a>
+<a id="whatsapp-btn" href="https://wa.me/1819432389" target="_blank">💬</a>
 
 <!-- SERVICE CARD ANIMATION SCRIPT -->
 <script>
