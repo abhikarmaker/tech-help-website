@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EasyTech | Local Tech Support in Coquitlam, Burnaby, Surrey & Vancouver</title>
 <meta name="description" content="EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. TV & sound setup, Wi-Fi & network support, smart home devices, home office setup, senior-friendly tech guidance, and small business IT assistance. Call or WhatsApp 819-434-2389.">
+
+<!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
+<meta property="og:title" content="EasyTech | Local Tech Support in Coquitlam, Burnaby, Surrey & Vancouver">
+<meta property="og:description" content="Friendly local tech support for TV setup, Wi-Fi, smart home devices, home office setup, and small business IT assistance. Call or WhatsApp 819-434-2389.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://abhikarmaker.github.io/tech-help-website/">
+<meta property="og:image" content="https://abhikarmaker.github.io/tech-help-website/easytech-logo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Local Business Structured Data -->
@@ -13,14 +21,13 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "EasyTech",
-  "image": "https://yourwebsite.com/easytech-logo.png",
-  "@id": "https://yourwebsite.com",
-  "url": "https://yourwebsite.com",
+  "image": "https://abhikarmaker.github.io/tech-help-website/easytech-logo.png",
+  "@id": "https://abhikarmaker.github.io/tech-help-website/",
+  "url": "https://abhikarmaker.github.io/tech-help-website/",
   "telephone": "+18194342389",
-  "priceRange": "$$",
+  "priceRange": "$40–$120",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Your Street Address",
     "addressLocality": "Coquitlam",
     "addressRegion": "BC",
     "postalCode": "V3K 0A1",
@@ -31,12 +38,12 @@
     "latitude": 49.1768374,
     "longitude": -122.9222895
   },
+  "openingHours": "Mo-Su 09:00-21:00",
+  "description": "EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. TV & sound setup, Wi‑Fi & network support, smart home devices, home office setup, senior‑friendly tech guidance, and small business IT assistance.",
   "sameAs": [
     "https://www.facebook.com/groups/easytechmetrovancouver/",
     "https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu"
-  ],
-  "openingHours": "Mo-Su 09:00-21:00",
-  "description": "EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. TV & sound setup, Wi-Fi & network support, smart home devices, home office setup, senior-friendly tech guidance, and small business IT assistance."
+  ]
 }
 </script>
 
@@ -142,6 +149,11 @@ section h2 {
 }
 .pricing h2 {color:#1abc9c;}
 
+/* BLOG / LOCAL TIPS */
+#blog h2 {color:#3498db;margin:3rem 0 2rem;text-align:center;}
+#blog .service {opacity:0;}
+#blog .service.visible {opacity:1;}
+
 /* CONTACT SECTION */
 .contact {
     background: linear-gradient(135deg,#1abc9c,#3498db);
@@ -184,36 +196,13 @@ section h2 {
 }
 .footer-brand p {margin:0;opacity:0.9;}
 .footer-links a,
-.footer-contact a {
-    display:block;
-    margin:0.4rem 0;
-    color:#1abc9c;
-    text-decoration:none;
-    transition:0.3s;
-}
+.footer-contact a {display:block;margin:0.4rem 0;color:#1abc9c;text-decoration:none;transition:0.3s;}
 .footer-links a:hover,
 .footer-contact a:hover {color:#2ecc71;}
-.footer-social {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-.footer-social img {
-    transition: transform 0.3s, opacity 0.3s;
-}
-.footer-social img:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
-.footer-bottom {
-    text-align:center;
-    opacity:0.7;
-    font-size:0.85rem;
-    border-top:1px solid rgba(255,255,255,0.1);
-    padding-top:1rem;
-}
+.footer-social {margin-top: 1rem;display: flex;gap: 1rem;justify-content: center;align-items: center;}
+.footer-social img {transition: transform 0.3s, opacity 0.3s;}
+.footer-social img:hover {transform: scale(1.2);opacity: 0.8;}
+.footer-bottom {text-align:center;opacity:0.7;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem;}
 
 /* FLOATING WHATSAPP BUTTON */
 #whatsapp-btn {
@@ -352,11 +341,9 @@ section h2 {
 
   <!-- Social Links -->
   <div class="footer-social">
-      <!-- Facebook Group -->
       <a href="https://www.facebook.com/groups/easytechmetrovancouver/" target="_blank" rel="noopener" aria-label="EasyTech Facebook Group">
           <img src="facebook-icon.png" alt="EasyTech Facebook Group" width="32">
       </a>
-      <!-- Google Business / Maps -->
       <a href="https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu" target="_blank" rel="noopener" aria-label="EasyTech Google Business Profile">
           <img src="google-icon.png" alt="EasyTech Google Business Profile" width="32">
       </a>
