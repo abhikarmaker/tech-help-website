@@ -18,7 +18,7 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
+/* HEADER 
 header {
     background: #0d6efd;
     color: #fff;
@@ -40,6 +40,60 @@ header h1 {
 header p {
     margin-top: 0.5rem;
     font-size: 1.1rem;
+}*/
+
+/* HEADER */
+.site-header {
+    background: #0d6efd;
+    padding: 1.2rem 1rem;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    left: 0;
+    height: 70px;          /* more visible */
+    width: auto;
+}
+
+/* BRAND */
+.brand {
+    text-align: center;
+    color: #fff;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+}
+
+.brand p {
+    margin: 0.2rem 0 0;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        position: static;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 0.6rem;
+        height: 60px;
+    }
 }
 
 /* SECTIONS */
@@ -137,10 +191,15 @@ footer {
 
 <body>
 
-<header>
-    <img src="easytech-logo.png" alt="EasyTech Logo">
-    <h1>EasyTech</h1>
-    <p>Smart, Friendly, Local Tech Support</p>
+<header class="site-header">
+    <div class="header-container">
+        <img src="easytech-logo.png" alt="EasyTech Logo" class="logo">
+
+        <div class="brand">
+            <h1>EasyTech</h1>
+            <p>Smart, Friendly, Local Tech Support</p>
+        </div>
+    </div>
 </header>
 
 <section class="flyer">
