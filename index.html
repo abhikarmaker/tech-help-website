@@ -3,223 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EasyTech - Coquitlam, Burnaby, Surrey, Vancouver</title>
-
+<title>EasyTech - Local Tech Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* {
-    box-sizing: border-box;
-}
+* {box-sizing:border-box;}
+body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;line-height:1.6;}
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* HEADER 
-header {
-    background: #0d6efd;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-header img {
-    max-width: 150px;
-    display: block;
-    margin: 0 auto 1rem auto;
-}
-
-header h1 {
-    margin: 0;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-}
-
-header p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-}*/
-
-/* HEADER */
-.site-header {
-    background: #0d6efd;
-    padding: 1.2rem 1rem;
-}
-
-.header-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* HERO BANNER */
+.hero {
     position: relative;
+    background: linear-gradient(135deg,#1abc9c,#3498db);
+    color:#fff;
+    text-align:center;
+    padding:6rem 1rem;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:400px;
 }
-
-/* LOGO */
-.logo {
-    position: absolute;
-    left: 20px;          /* some padding from edge */
-    height: 120px;       /* bigger for desktop */
-    width: auto;
+.hero::after {
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: url('hero-tech-bg.jpg') center/cover no-repeat;
+    opacity:0.2;
+    z-index:0;
 }
-
-/* MOBILE FIX */
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        position: static;
-    }
-
-    .logo {
-        position: static;
-        margin-bottom: 0.6rem;
-        height: 80px;    /* smaller on mobile */
-    }
+.hero img {
+    height:140px;
+    width:auto;
+    margin-bottom:1rem;
+    z-index:1;
+    position:relative;
 }
-
-/* BRAND */
-.brand {
-    text-align: center;
-    color: #fff;
+.hero h1 {
+    font-size:clamp(2rem,6vw,3rem);
+    margin:0.5rem 0;
+    z-index:1;
+    position:relative;
 }
-
-.brand h1 {
-    margin: 0;
-    font-size: clamp(1.6rem, 4vw, 2.3rem);
+.hero p {
+    font-size:1.2rem;
+    margin-bottom:1.5rem;
+    opacity:0.9;
+    z-index:1;
+    position:relative;
 }
-
-.brand p {
-    margin: 0.2rem 0 0;
-    font-size: 1rem;
-    opacity: 0.95;
+.hero .cta {
+    background:#2ecc71;
+    color:#fff;
+    padding:1rem 1.6rem;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    z-index:1;
+    position:relative;
 }
+.hero .cta:hover {background:#27ae60;}
 
-/* MOBILE FIX */
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        position: static;
-    }
-
-    .logo {
-        position: static;
-        margin-bottom: 0.6rem;
-        height: 60px;
-    }
+/* SERVICES */
+section h2 {
+    color:#3498db;
+    text-align:center;
+    margin:3rem 0 2rem;
+    font-weight:700;
 }
-
-/* SECTIONS */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 2rem 1rem;
-}
-
-/* FLYER */
-.flyer img {
-    width: 100%;
-    max-width: 700px;
-    display: block;
-    margin: auto;
-    border-radius: 12px;
-}
-
-/* SERVICES GRID */
 .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.5rem;
+    max-width:1100px;
+    margin:auto;
+    padding:0 1rem;
 }
-
 .service {
-    background: #fff;
-    padding: 1.4rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background:#fff;
+    padding:1.6rem;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    transition:transform 0.3s,box-shadow 0.3s,opacity 0.6s;
+    opacity:0;
 }
-
-.service h3 {
-    margin-top: 0.6rem;
-    color: #0d6efd;
-}
+.service.visible {opacity:1;}
+.service:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+.service h3 {margin-top:0.8rem;color:#1abc9c;}
 
 /* PRICING */
 .pricing {
-    background: #e9ecef;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 2rem;
+    background:#ecf0f1;
+    padding:2rem;
+    border-radius:15px;
+    text-align:center;
+    margin:3rem auto;
+    max-width:700px;
 }
+.pricing h2 {color:#1abc9c;}
 
-/* CONTACT */
+/* CONTACT SECTION */
 .contact {
-    background: #0d6efd;
-    color: #fff;
-    text-align: center;
-    padding: 2.5rem 1rem;
-    border-radius: 12px;
+    background:#3498db;
+    color:#fff;
+    text-align:center;
+    padding:3rem 1rem;
+    border-radius:15px;
+    margin-top:3rem;
 }
-
-.contact a {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* WhatsApp Button */
-.cta {
-    display: inline-block;
-    background: #25D366;
-    color: #ffffff;
-    padding: 0.9rem 1.4rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-}
+.contact a {color:#fff;font-weight:bold;text-decoration:none;}
+.cta {display:inline-block;background:#2ecc71;color:#fff;padding:1rem 1.6rem;border-radius:10px;margin-top:1rem;font-weight:bold;text-decoration:none;transition:0.3s;}
+.cta:hover{background:#27ae60;}
 
 /* FOOTER */
 footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:1.2rem;
+    font-size:0.9rem;
 }
 
-/* SMALL SCREEN TWEAKS */
-@media (max-width: 480px) {
-    header {
-        padding: 1.5rem 1rem;
-    }
-    .pricing {
-        padding: 1.5rem;
-    }
+/* FLOATING WHATSAPP BUTTON */
+#whatsapp-btn {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    transition:0.3s;
+    z-index:1000;
+}
+#whatsapp-btn:hover {background:#1ebe57;}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .hero img{height:90px;}
 }
 </style>
 </head>
-
 <body>
 
-<header class="site-header">
-    <div class="header-container">
-        <img src="easytech-logo.png" alt="EasyTech Logo" class="logo">
-
-        <div class="brand">
-            <h1>EasyTech</h1>
-            <p>Smart, Friendly, Local Tech Support</p>
-        </div>
-    </div>
+<!-- HERO HEADER -->
+<header class="hero">
+    <img src="easytech-logo.png" alt="EasyTech Logo">
+    <h1>EasyTech</h1>
+    <p>Smart, Friendly, Local Tech Support</p>
+    <a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
 </header>
 
-<section class="flyer">
-    <img src="flyer.png" alt="EasyTech Flyer">
-</section>
-
+<!-- SERVICES -->
 <section>
     <h2>Our Services</h2>
     <div class="services">
@@ -241,15 +185,31 @@ footer {
     </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact">
     <h2>Contact</h2>
     <p>Call / WhatsApp: <a href="tel:8194342389">819-434-2389</a></p>
     <a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
     © 2026 EasyTech. Metro Vancouver Tech Help
 </footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a id="whatsapp-btn" href="https://wa.me/18194342389" target="_blank">💬</a>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const services = document.querySelectorAll('.service');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){entry.target.classList.add('visible');}
+  });
+},{threshold:0.1});
+services.forEach(service => observer.observe(service));
+</script>
 
 </body>
 </html>
