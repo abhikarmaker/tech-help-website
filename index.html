@@ -60,9 +60,23 @@ header p {
 /* LOGO */
 .logo {
     position: absolute;
-    left: 0;
-    height: 70px;          /* more visible */
+    left: 20px;          /* some padding from edge */
+    height: 120px;       /* bigger for desktop */
     width: auto;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        position: static;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 0.6rem;
+        height: 80px;    /* smaller on mobile */
+    }
 }
 
 /* BRAND */
