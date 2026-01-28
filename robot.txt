@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abhikarmaker.github.io/tech-help-website/sitemap.xml
+# Sitemap Location
+Sitemap: https://easytechvancouver.ca/sitemap.xml
