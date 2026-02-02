@@ -4,16 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EasyTech | Local Tech Support in Coquitlam, Burnaby, Surrey & Vancouver</title>
-<meta name="description" content="EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. Services: TV & sound setup, Wi-Fi & network support, smart home devices, home office setup, senior-friendly tech guidance, and small business IT assistance.">
+<link rel="icon" type="image/png" sizes="48x48" href="images/easytech-logo.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="EasyTech provides friendly local tech support in Vancouver, Burnaby, Coquitlam & Surrey. TV, Wi-Fi, smart home & small business IT support. Call 819-434-2389.">
+<link rel="canonical" href="https://easytechvancouver.ca/" />
+  
+<!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
+<meta property="og:title" content="EasyTech | Local Tech Support in Coquitlam, Burnaby, Surrey & Vancouver">
+<meta property="og:description" content="Friendly local tech support for TV setup, Wi-Fi, smart home devices, home office setup, and small business IT assistance. Call or WhatsApp 819-434-2389.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://easytechvancouver.ca/">
+
+<!-- Correct OG image with size/type -->
+<meta property="og:image" content="https://easytechvancouver.ca/images/easytech-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Local Business Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "EasyTech",
+  "image": "https://easytechvancouver.ca/images/easytech-logo.png",
+  "@id": "https://easytechvancouver.ca/",
+  "url": "https://easytechvancouver.ca/",
+  "telephone": "+18194342389",
+  "priceRange": "$40–$120",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coquitlam",
+    "addressRegion": "BC",
+    "postalCode": "V3K 0A1",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 49.1768374,
+    "longitude": -122.9222895
+  },
+  "openingHours": "Mo-Su 09:00-21:00",
+  "description": "EasyTech provides friendly local tech support in Coquitlam, Burnaby, Surrey, and Vancouver. TV & sound setup, Wi‑Fi & network support, smart home devices, home office setup, senior‑friendly tech guidance, and small business IT assistance.",
+  "sameAs": [
+    "https://www.facebook.com/groups/easytechmetrovancouver/",
+    "https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu"
+  ]
+}
+</script>
+
 <style>
 * {box-sizing:border-box;}
-body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;line-height:1.6;}
+body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;line-height:1.6;scroll-behavior:smooth;}
 
 /* HERO BANNER */
+@keyframes gradientShift {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
 .hero {
     position: relative;
-    background: linear-gradient(135deg,#1abc9c,#3498db);
+    background: linear-gradient(135deg,#1abc9c,#3498db,#9b59b6,#e74c3c);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     color:#fff;
     text-align:center;
     padding:6rem 1rem;
@@ -29,30 +85,14 @@ body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;lin
     position:absolute;
     top:0; left:0;
     width:100%; height:100%;
-    background: url('hero-tech-bg.png') center/cover no-repeat;
+    background: url('images/hero-tech-bg.png') center/cover no-repeat;
     opacity:0.2;
     z-index:0;
 }
-.hero img {
-    height:140px;
-    width:auto;
-    margin-bottom:1rem;
-    z-index:1;
-    position:relative;
-}
-.hero h1 {
-    font-size:clamp(2rem,6vw,3rem);
-    margin:0.5rem 0;
-    z-index:1;
-    position:relative;
-}
-.hero p {
-    font-size:1.2rem;
-    margin-bottom:1.5rem;
-    opacity:0.9;
-    z-index:1;
-    position:relative;
-}
+.hero img {height:250px;width:auto;margin-bottom:1rem;z-index:1;position:relative;}
+.hero h1 {font-size:clamp(2rem,6vw,3rem);margin:0.5rem 0;z-index:1;position:relative;}
+.hero .tagline {font-size:1.3rem;margin-bottom:1.5rem;opacity:0.9;z-index:1;}
+.hero p {font-size:1.2rem;margin-bottom:1rem;opacity:0.9;z-index:1;position:relative;}
 .hero .cta {
     background:#2ecc71;
     color:#fff;
@@ -63,211 +103,169 @@ body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;lin
     transition:0.3s;
     z-index:1;
     position:relative;
+    animation: pulse 2s infinite;
 }
 .hero .cta:hover {background:#27ae60;}
-
+@keyframes pulse {0%,100% {transform:scale(1);} 50% {transform:scale(1.05);}}
+@media(max-width:600px){
+    .hero img {height:120px;}
+}
 /* SERVICES */
-section h2 {
-    color:#3498db;
-    text-align:center;
-    margin:3rem 0 2rem;
-    font-weight:700;
-}
-.services {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:1.5rem;
-    max-width:1100px;
-    margin:auto;
-    padding:0 1rem;
-}
+section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
+.services {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1100px;margin:auto;padding:0 1rem;}
 .service {
-    background:#fff;
+    background: linear-gradient(145deg,#ffffff,#f1f4f9);
     padding:1.6rem;
     border-radius:15px;
     text-align:center;
     box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    transition:transform 0.3s,box-shadow 0.3s,opacity 0.6s;
+    transition:transform 0.4s,box-shadow 0.4s,opacity 0.6s;
     opacity:0;
 }
 .service.visible {opacity:1;}
-.service:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+.service:hover {transform:translateY(-10px) scale(1.03);box-shadow:0 15px 30px rgba(0,0,0,0.2);}
+.service img {height:50px;margin-bottom:1rem;}
 .service h3 {margin-top:0.8rem;color:#1abc9c;}
+.service p {opacity:0.85;}
+.service .cta {margin-top:1rem;display:inline-block;background:#2ecc71;color:#fff;padding:0.8rem 1.2rem;border-radius:10px;text-decoration:none;transition:0.3s;}
+.service .cta:hover {background:#27ae60;}
 
 /* PRICING */
-.pricing {
-    background:#ecf0f1;
-    padding:2rem;
-    border-radius:15px;
-    text-align:center;
-    margin:3rem auto;
-    max-width:700px;
-}
+.pricing {background:#ecf0f1;padding:2rem;border-radius:15px;text-align:center;margin:3rem auto;max-width:700px;}
 .pricing h2 {color:#1abc9c;}
 
-/* CONTACT SECTION */
-.contact {
-    background: linear-gradient(135deg,#1abc9c,#3498db);
-    color:#fff;
-    text-align:center;
-    padding:3rem 1rem;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    margin-top:3rem;
-}
+/* BLOG / LOCAL TIPS */
+#blog h2 {color:#3498db;margin:3rem 0 2rem;text-align:center;}
+
+/* CONTACT */
+.contact {background: linear-gradient(135deg,#1abc9c,#3498db);color:#fff;text-align:center;padding:3rem 1rem;border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top:3rem;}
 .contact a {color:#fff;font-weight:bold;text-decoration:none;}
 .contact a:hover {color:#2ecc71;}
-.cta {display:inline-block;background:#2ecc71;color:#fff;padding:1rem 1.6rem;border-radius:10px;margin-top:1rem;font-weight:bold;text-decoration:none;transition:0.3s;}
-.cta:hover{background:#27ae60;}
+.contact .cta {display:inline-block;background:#2ecc71;color:#fff;padding:1rem 1.6rem;border-radius:10px;margin-top:1rem;font-weight:bold;text-decoration:none;transition:0.3s;}
+.contact .cta:hover{background:#27ae60;}
 
 /* FOOTER */
-.footer {
-    background: linear-gradient(135deg,#222,#111);
-    color: #fff;
-    padding: 3rem 1rem 1rem;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
-    font-size: 0.95rem;
-}
-.footer-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: flex-start;
-    padding-bottom: 1.5rem;
-}
-.footer-logo {
-    height: 60px;
-    width: auto;
-    margin-bottom: 0.5rem;
-}
+.footer {background: linear-gradient(135deg,#111,#222,#333);color:#fff;padding:3rem 1rem 1rem;border-top-left-radius:25px;border-top-right-radius:25px;box-shadow:0 -6px 20px rgba(0,0,0,0.25);font-size:0.95rem;}
+.footer-container {max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start;padding-bottom:1.5rem;}
+.footer-logo {height:60px;width:auto;margin-bottom:0.5rem;}
 .footer-brand p {margin:0;opacity:0.9;}
-.footer-links a,
-.footer-contact a {
-    display:block;
-    margin:0.4rem 0;
-    color:#1abc9c;
-    text-decoration:none;
-    transition:0.3s;
-}
-.footer-links a:hover,
-.footer-contact a:hover {color:#2ecc71;}
-.footer-bottom {
-    text-align:center;
-    opacity:0.7;
-    font-size:0.85rem;
-    border-top:1px solid rgba(255,255,255,0.1);
-    padding-top:1rem;
-}
+.footer-links a,.footer-contact a{display:block;margin:0.4rem 0;color:#1abc9c;text-decoration:none;transition:0.3s;}
+.footer-links a:hover,.footer-contact a:hover {color:#2ecc71;}
+.footer-social {margin-top:1rem;display:flex;gap:1rem;justify-content:center;align-items:center;}
+.footer-social img {transition: transform 0.3s, opacity 0.3s;}
+.footer-social img:hover {transform: scale(1.3);filter: drop-shadow(0 0 6px #1abc9c);}
+.footer-bottom {text-align:center;opacity:0.7;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem;}
 
 /* FLOATING WHATSAPP BUTTON */
 #whatsapp-btn {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background: linear-gradient(135deg,#1abc9c,#16a085);
-    color:#fff;
-    border-radius:50%;
-    width:60px;
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    text-decoration:none;
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    z-index:1000;
+    position:fixed;bottom:20px;right:20px;background: linear-gradient(135deg,#1abc9c,#16a085);color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,0.25);transition: transform 0.3s, box-shadow 0.3s, background 0.3s;z-index:1000;animation: bounce 2s infinite;
 }
-#whatsapp-btn:hover {
-    background: linear-gradient(135deg,#2ecc71,#1abc9c);
-    transform: scale(1.1);
-    box-shadow:0 10px 25px rgba(0,0,0,0.35);
-}
+#whatsapp-btn:hover {background: linear-gradient(135deg,#2ecc71,#1abc9c);transform: scale(1.1);box-shadow:0 10px 25px rgba(0,0,0,0.35);}
+@keyframes bounce {0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
 /* RESPONSIVE */
-@media(max-width:600px){
-    .hero img{height:90px;}
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
+@media(max-width:600px){.hero img{height:90px;}.footer-container{flex-direction:column;align-items:center;text-align:center;}}
 </style>
 </head>
 <body>
 
 <!-- HERO HEADER -->
 <header class="hero">
-    <img src="easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support">
+    <img src="images/easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support">
     <h1>EasyTech</h1>
+    <p class="tagline">Making Technology Simple & Friendly in Metro Vancouver</p>
     <p>Smart, Friendly, Local Tech Support in Coquitlam, Burnaby, Surrey & Vancouver</p>
     <a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
 </header>
 
 <!-- SERVICES -->
 <section id="services">
-    <h2>Our Services in Metro Vancouver</h2>
-    <div class="services">
-        <div class="service">
-            <h3>TV & Sound Setup</h3>
-            <p>Professional smart TV and soundbar installation in Coquitlam, Burnaby, Surrey & Vancouver.</p>
-        </div>
-        <div class="service">
-            <h3>Wi-Fi & Network Support</h3>
-            <p>Fix Wi-Fi, routers, and network issues for homes and small businesses in Metro Vancouver.</p>
-        </div>
-        <div class="service">
-            <h3>Phones & Tablets Setup</h3>
-            <p>Setup, backup, and optimize smartphones and tablets for local clients.</p>
-        </div>
-        <div class="service">
-            <h3>Smart Home Devices</h3>
-            <p>Install Alexa, Google Home, and other smart devices throughout Vancouver area homes.</p>
-        </div>
-        <div class="service">
-            <h3>Home Office Setup</h3>
-            <p>Setup laptops, monitors, webcams, and full home office solutions in Coquitlam and Burnaby.</p>
-        </div>
-        <div class="service">
-            <h3>Senior-Friendly Support</h3>
-            <p>Patient and easy-to-understand tech guidance for seniors across Metro Vancouver.</p>
-        </div>
-        <div class="service">
-            <h3>Small Business IT Assistance</h3>
-            <p>POS setup, network optimization, and IT help for small businesses locally.</p>
-        </div>
-        <div class="service">
-            <h3>Device Optimization & Security</h3>
-            <p>Clean, secure, and optimize your devices for faster, safer performance.</p>
-        </div>
+<h2>Our Services in Metro Vancouver</h2>
+<div class="services">
+    <div class="service">
+        <img src="images/wifi-icon.png" alt="Wi-Fi Icon">
+        <h3>Wi-Fi & Network Support</h3>
+        <p>Reliable Wi-Fi and network configuration services for homes and small businesses across Metro Vancouver.</p>
     </div>
+    <div class="service">
+        <img src="images/phone-icon.png" alt="Phones Icon">
+        <h3>Phones & Tablets Setup</h3>
+        <p>Professional smartphone and tablet setup, backup, and optimization for local clients.</p>
+    </div>
+    <div class="service">
+        <img src="images/smarthome-icon.png" alt="Smart Home Icon">
+        <h3>Smart Home Devices</h3>
+        <p>Install Alexa, Google Home, and other smart devices throughout Vancouver area homes.</p>
+    </div>
+    <div class="service">
+        <img src="images/office-icon.png" alt="Home Office Icon">
+        <h3>Home Office Setup</h3>
+        <p>Setup laptops, monitors, webcams, and full home office solutions in Coquitlam and Burnaby.</p>
+    </div>
+    <div class="service">
+        <img src="images/senior-icon.png" alt="Senior Support Icon">
+        <h3>Senior-Friendly Support</h3>
+        <p>Patient and easy-to-understand tech guidance for seniors across Metro Vancouver.</p>
+    </div>
+    <div class="service">
+        <img src="images/business-icon.png" alt="Business Support Icon">
+        <h3>Small Business IT Assistance</h3>
+        <p>POS setup, network optimization, and IT help for small businesses locally.</p>
+    </div>
+    <div class="service">
+        <img src="images/security-icon.png" alt="Device Optimization Icon">
+        <h3>Device Optimization & Security</h3>
+        <p>Clean, secure, and optimize your devices for faster, safer performance.</p>
+    </div>
+    <div class="service">
+      <img src="images/web-development-icon.png" alt="Website Icon">
+      <h3>Website</h3>
+      <p>Professional responsive websites — design, development, SEO-friendly pages, and hosting setup for local businesses.</p>
+    </div>
+</div>
 
-    <div class="pricing" id="pricing">
-        <h2>Pricing</h2>
-        <p><strong>Flat Rates:</strong> $40 – $120 per service</p>
-        <p>Bundles available for multiple services.</p>
-        <p><strong>First 2 clients get 10% OFF!</strong></p>
+<div class="pricing" id="pricing">
+    <h2>Pricing</h2>
+    <p><strong>Flat Rates:</strong> $40 – $120 per service</p>
+    <p>Bundles available for multiple services.</p>
+    <p><strong>First 2 clients get 10% OFF!</strong></p>
+</div>
+</section>
+
+<!-- BLOG / LOCAL TIPS -->
+<section id="blog">
+<h2>Tech Tips & Local Guides</h2>
+<div class="services">
+    <div class="service">
+        <h3>Smart TV & Sound Setup in Metro Vancouver</h3>
+        <p>Struggling with your Smart TV or sound system? EasyTech sets up TVs and soundbars across Coquitlam, Burnaby, Surrey, and Vancouver.</p>
+        <a class="cta" href="#contact">Book Now</a>
     </div>
+    <div class="service">
+        <h3>Wi-Fi & Network Troubleshooting</h3>
+        <p>Slow Wi-Fi? EasyTech fixes network issues in homes and small offices in Metro Vancouver. Optimize your home office or business today.</p>
+        <a class="cta" href="#contact">Book Now</a>
+    </div>
+    <div class="service">
+        <h3>Smart Home Devices Setup</h3>
+        <p>Alexa, Google Home, lights, thermostats, and cameras — EasyTech makes your home smarter in Coquitlam, Burnaby, Surrey, and Vancouver.</p>
+        <a class="cta" href="#contact">Book Now</a>
+    </div>
+</div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-    <h2>Contact EasyTech</h2>
-    <p>Call or WhatsApp: <a href="tel:8194342389">819-434-2389</a></p>
-    <a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
+<h2>Contact EasyTech</h2>
+<p>Call or WhatsApp: <a href="tel:8194342389">819-434-2389</a></p>
+<a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <img src="easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support" class="footer-logo">
+      <img src="images/easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support" class="footer-logo">
       <p>EasyTech - Metro Vancouver Tech Support</p>
     </div>
     <div class="footer-links">
@@ -280,6 +278,20 @@ section h2 {
       <a href="https://wa.me/18194342389" target="_blank">💬 WhatsApp</a>
     </div>
   </div>
+
+  <!-- Social Links -->
+  <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61587106324816" target="_blank" rel="noopener">
+          <img src="images/facebook-icon.png" alt="EasyTech Facebook Group" width="32">
+      </a>
+      <a href="https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu" target="_blank" rel="noopener">
+          <img src="images/google-icon.png" alt="EasyTech Google Business Profile" width="32">
+      </a>
+      <a href="https://www.instagram.com/easytechvancouver?igsh=dmF2dHprM3gwdDEx&utm_source=qr" target="_blank" rel="noopener">
+          <img src="images/instagram-icon.png" alt="EasyTech Instagram" width="32">
+      </a>
+  </div>
+
   <p class="footer-bottom">© 2026 EasyTech. All rights reserved.</p>
 </footer>
 
