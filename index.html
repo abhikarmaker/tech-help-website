@@ -8,6 +8,8 @@
 <meta name="keywords" content="tech support Vancouver, Wi-Fi setup Coquitlam, smart home installation Burnaby, local IT support Surrey, tech help Metro Vancouver, TV setup service">
 <meta name="author" content="EasyTech">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1abc9c">
 <link rel="canonical" href="https://easytechvancouver.ca/" />
 <link rel="icon" type="image/png" sizes="48x48" href="images/easytech-logo.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -18,6 +20,7 @@
 <meta property="og:description" content="Friendly local tech support for TV setup, Wi-Fi, smart home devices, home office setup, and small business IT assistance. Call or WhatsApp 819-434-2389.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://easytechvancouver.ca/">
+<meta property="og:locale" content="en_CA">
 
 <!-- Correct OG image with size/type -->
 <meta property="og:image" content="https://easytechvancouver.ca/images/easytech-logo.png">
@@ -95,8 +98,131 @@
         "@type": "Answer",
         "text": "You can call or WhatsApp EasyTech at 819-434-2389. Operating hours are Monday to Sunday, 9:00 AM to 9:00 PM."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide same-day service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! EasyTech offers same-day tech support in many cases. Call or WhatsApp 819-434-2389 to check availability for your specific service needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer remote tech support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EasyTech provides remote tech support for device optimization, software issues, and troubleshooting. We also offer in-home services for hardware setup and installation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I get the 20% first-time discount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Just mention that you're a first-time customer when you contact EasyTech. The 20% discount will be applied to your first service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can EasyTech help with smart home setup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! EasyTech specializes in smart home device installation including Alexa, Google Home, smart lights, thermostats, security cameras, and more throughout Metro Vancouver."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve seniors with tech support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! EasyTech offers senior-friendly tech support with patient, easy-to-understand guidance for smartphones, tablets, computers, and smart home devices. We're here to make technology less intimidating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I book a service online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can book a service by calling 819-434-2389 or sending a WhatsApp message. Our team will confirm your appointment and discuss service details."
+      }
     }
   ]
+}
+</script>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://easytechvancouver.ca/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://easytechvancouver.ca/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pricing",
+      "item": "https://easytechvancouver.ca/#pricing"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "FAQ",
+      "item": "https://easytechvancouver.ca/#faq"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Contact",
+      "item": "https://easytechvancouver.ca/#contact"
+    }
+  ]
+}
+</script>
+
+<!-- Contact Schema for Local Search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPoint",
+  "telephone": "+18194342389",
+  "contactType": "Customer Service",
+  "areaServed": ["Coquitlam", "Burnaby", "Surrey", "Vancouver"],
+  "availableLanguage": ["en"]
+}
+</script>
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EasyTech",
+  "url": "https://easytechvancouver.ca/",
+  "logo": "https://easytechvancouver.ca/images/easytech-logo.png",
+  "description": "Local tech support in Metro Vancouver for homes and small businesses",
+  "telephone": "+18194342389",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61587106324816",
+    "https://www.instagram.com/easytechvancouver",
+    "https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+18194342389",
+    "contactType": "Customer Service"
+  }
 }
 </script>
 
@@ -182,6 +308,40 @@ section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
 /* BLOG / LOCAL TIPS */
 #blog h2 {color:#3498db;margin:3rem 0 2rem;text-align:center;}
 
+/* FAQ SECTION */
+#faq {max-width:900px;margin:3rem auto;padding:0 1rem;}
+#faq h2 {color:#3498db;margin:3rem 0 2rem;text-align:center;}
+.faq-container {display:flex;flex-direction:column;gap:0.8rem;}
+.faq-item {border:1px solid #ddd;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.06);}
+.faq-question {
+    width:100%;
+    background:linear-gradient(135deg,#f8f9fa,#ecf0f1);
+    border:none;
+    padding:1.2rem;
+    text-align:left;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    color:#1abc9c;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:background 0.3s;
+}
+.faq-question:hover {background:linear-gradient(135deg,#ecf0f1,#e0e6ed);}
+.faq-toggle {font-size:1.4rem;font-weight:bold;transition:transform 0.3s;}
+.faq-answer {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease-out;
+    padding:0 1.2rem;
+}
+.faq-answer p {margin:0;color:#555;line-height:1.6;}
+.faq-answer a {color:#1abc9c;text-decoration:none;font-weight:bold;}
+.faq-answer a:hover {color:#2ecc71;}
+.faq-item.open .faq-answer {max-height:500px;padding:1.2rem;}
+.faq-item.open .faq-toggle {transform:rotate(45deg);}
+
 /* CONTACT */
 .contact {background: linear-gradient(135deg,#1abc9c,#3498db);color:#fff;text-align:center;padding:3rem 1rem;border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top:3rem;}
 .contact a {color:#fff;font-weight:bold;text-decoration:none;}
@@ -218,7 +378,7 @@ section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
 
 <!-- HERO HEADER -->
 <header class="hero">
-    <img src="images/easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support">
+    <img src="images/easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support" loading="lazy">
     <h1>EasyTech - Friendly Tech Support in Metro Vancouver</h1>
     <p class="tagline">Making Technology Simple & Friendly in Coquitlam, Burnaby, Surrey & Vancouver</p>
     <p>Smart, Local Tech Support for Homes & Small Businesses</p>
@@ -233,42 +393,42 @@ section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
 <h2>Tech Support Services in Metro Vancouver</h2>
 <div class="services" role="region" aria-label="Local tech support services">
     <article class="service">
-        <img src="images/wifi-icon.png" alt="Wi-Fi network icon">
+        <img src="images/wifi-icon.png" alt="Wi-Fi network icon" loading="lazy">
         <h3>Wi-Fi & Network Support in Metro Vancouver</h3>
         <p>Reliable Wi-Fi and network configuration services for homes and small businesses across Coquitlam, Burnaby, Surrey, and Vancouver.</p>
     </article>
     <article class="service">
-        <img src="images/phone-icon.png" alt="Smartphone and tablet icon">
+        <img src="images/phone-icon.png" alt="Smartphone and tablet icon" loading="lazy">
         <h3>Phones & Tablets Setup</h3>
         <p>Professional smartphone and tablet setup, backup, and optimization for local clients throughout Metro Vancouver.</p>
     </article>
     <article class="service">
-        <img src="images/smarthome-icon.png" alt="Smart home devices icon">
+        <img src="images/smarthome-icon.png" alt="Smart home devices icon" loading="lazy">
         <h3>Smart Home Device Installation</h3>
         <p>Install Alexa, Google Home, smart lights, thermostats, and cameras throughout Vancouver area homes and offices.</p>
     </article>
     <article class="service">
-        <img src="images/office-icon.png" alt="Home office setup icon">
+        <img src="images/office-icon.png" alt="Home office setup icon" loading="lazy">
         <h3>Home Office Setup & Optimization</h3>
         <p>Setup laptops, monitors, webcams, and complete home office solutions in Coquitlam, Burnaby, and surrounding areas.</p>
     </article>
     <article class="service">
-        <img src="images/senior-icon.png" alt="Senior tech support icon">
+        <img src="images/senior-icon.png" alt="Senior tech support icon" loading="lazy">
         <h3>Senior-Friendly Tech Support</h3>
         <p>Patient and easy-to-understand tech guidance for seniors across Metro Vancouver with personalized assistance.</p>
     </article>
     <article class="service">
-        <img src="images/business-icon.png" alt="Small business IT support icon">
+        <img src="images/business-icon.png" alt="Small business IT support icon" loading="lazy">
         <h3>Small Business IT Assistance</h3>
         <p>POS system setup, network optimization, and comprehensive IT help for small businesses in the Vancouver area.</p>
     </article>
     <article class="service">
-        <img src="images/security-icon.png" alt="Device security and optimization icon">
+        <img src="images/security-icon.png" alt="Device security and optimization icon" loading="lazy">
         <h3>Device Optimization & Security</h3>
         <p>Clean, secure, and optimize your computers and devices for faster, safer, and more reliable performance.</p>
     </article>
     <article class="service">
-      <img src="images/web-development-icon.png" alt="Professional website design icon">
+      <img src="images/web-development-icon.png" alt="Professional website design icon" loading="lazy">
       <h3>Professional Website Design & Development</h3>
       <p>Responsive websites with SEO optimization, professional design, and hosting setup for local Vancouver businesses.</p>
     </article>
@@ -306,6 +466,52 @@ section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
 </div>
 </section>
 
+<!-- FAQ SECTION -->
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-container">
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>What areas does EasyTech serve?</span>
+      <span class="faq-toggle">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>EasyTech provides local tech support in Coquitlam, Burnaby, Surrey, and Vancouver in Metro Vancouver.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>How much does EasyTech charge for tech support?</span>
+      <span class="faq-toggle">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>EasyTech offers flat rates of $40–$120 per service, with bundles available for multiple services. First-time clients get 20% off!</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>What services does EasyTech offer?</span>
+      <span class="faq-toggle">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Services include Wi-Fi & network support, smartphone and tablet setup, smart home device installation, home office setup, senior-friendly tech guidance, small business IT assistance, device optimization and security, and website development.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>How do I contact EasyTech?</span>
+      <span class="faq-toggle">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>You can call or WhatsApp EasyTech at <a href="tel:+18194342389">819-434-2389</a>. Operating hours are Monday to Sunday, 9:00 AM to 9:00 PM.</p>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
 <h2>Contact EasyTech for Tech Support</h2>
@@ -320,13 +526,14 @@ section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <img src="images/easytech-logo.png" alt="EasyTech Logo" class="footer-logo">
+      <img src="images/easytech-logo.png" alt="EasyTech Logo" class="footer-logo" loading="lazy">
       <p>EasyTech - Local Tech Support for Metro Vancouver</p>
     </div>
     <nav class="footer-links">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#blog">Tech Tips</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="footer-contact">
@@ -338,13 +545,13 @@ section h2 {color:#3498db;text-align:center;margin:3rem 0 2rem;font-weight:700;}
   <!-- Social Links -->
   <nav class="footer-social" aria-label="Social media links">
       <a href="https://www.facebook.com/profile.php?id=61587106324816" target="_blank" rel="noopener" aria-label="Visit EasyTech on Facebook">
-          <img src="images/facebook-icon.png" alt="EasyTech Facebook" width="32" height="32">
+          <img src="images/facebook-icon.png" alt="EasyTech Facebook" width="32" height="32" loading="lazy">
       </a>
       <a href="https://www.google.com/maps/place/Easy+Tech/@49.1768374,-122.9222895,10z/data=!3m1!4b1!4m6!3m5!1s0x6781176df1c447d1:0xa9bfbfbdee7be8ca!8m2!3d49.1768374!4d-122.9222895!16s%2Fg%2F11m_4px_s6?hl=en&entry=ttu" target="_blank" rel="noopener" aria-label="Visit EasyTech on Google Maps">
-          <img src="images/google-icon.png" alt="EasyTech Google Business" width="32" height="32">
+          <img src="images/google-icon.png" alt="EasyTech Google Business" width="32" height="32" loading="lazy">
       </a>
       <a href="https://www.instagram.com/easytechvancouver?igsh=dmF2dHprM3gwdDEx&utm_source=qr" target="_blank" rel="noopener" aria-label="Follow EasyTech on Instagram">
-          <img src="images/instagram-icon.png" alt="EasyTech Instagram" width="32" height="32">
+          <img src="images/instagram-icon.png" alt="EasyTech Instagram" width="32" height="32" loading="lazy">
       </a>
   </nav>
 
@@ -363,6 +570,17 @@ const observer = new IntersectionObserver(entries => {
   });
 },{threshold:0.1});
 services.forEach(service => observer.observe(service));
+</script>
+
+<!-- FAQ ACCORDION SCRIPT -->
+<script>
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+  question.addEventListener('click', function(){
+    const faqItem = this.parentElement;
+    faqItem.classList.toggle('open');
+  });
+});
 </script>
 
 </body>
