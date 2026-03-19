@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | EasyTech Vancouver</title>
+  <meta name="description" content="Contact EasyTech for fast local tech support. Send a request and get automatic confirmation email." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" sizes="48x48" href="images/easytech-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f7f9fb; color:#152238;}
+    .container {max-width:900px; margin:0 auto; padding:30px 18px;}
+    h1 {font-size:2rem; margin-bottom:0.5rem;}
+    p {margin:0.25rem 0 1rem;}
+    .card {background:#fff; border:1px solid #dde5ef; border-radius:10px; padding:24px; box-shadow:0 6px 24px rgba(0,0,0,0.06);}
+    label {display:block; margin:.75rem 0 .25rem; font-weight:700;}
+    input, textarea {width:100%; padding:12px 14px; border:1px solid #ccd6e6; border-radius:8px; font-size:1rem;}
+    textarea {min-height:130px; resize:vertical;}
+    button {background:#1abc9c; color:#fff; border:none; border-radius:8px; cursor:pointer; padding:12px 18px; font-size:1rem; font-weight:700; margin-top:14px;}
+    button:hover {background:#15a589;}
+    .small {font-size:0.92rem; color:#5d6f89;}
+    .nav {margin-bottom:20px; display:flex; gap:12px;}
+    .nav a {color:#1abc9c; font-weight:700; text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="senior-tech-support.html">Senior Support</a>
+      <strong>Contact</strong>
+    </div>
+    <h1>Contact EasyTech</h1>
+    <p>Send a request and get the email delivered to <strong>abhijeet.karmaker@gmail.com</strong>. The visitor gets an immediate confirmation response email.</p>
+    <div class="card">
+      <form id="contactForm" name="contact" method="POST" action="/api/contact">
+        <input type="hidden" name="form-name" value="contact">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="819-434-2389">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Describe your issue or question" required></textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
+      <p class="small">Your request will be emailed to abhijeet.karmaker@gmail.com and you’ll receive an immediate acknowledgement message in your inbox.</p>
+    </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+      };
+
+      form.querySelector('button').textContent = 'Sending...';
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {'Content-Type': 'application/json'},
+      });
+
+      if (response.ok) {
+        form.reset();
+        alert('Sent! We have emailed you confirmation and received your request.');
+      } else {
+        const err = await response.json();
+        alert('Send failed: ' + (err.error || 'Unknown error'));
+      }
+
+      form.querySelector('button').textContent = 'Send Request';
+    });
+  </script>
+  </div>
+</body>
+</html>
