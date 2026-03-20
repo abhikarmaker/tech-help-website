@@ -10,7 +10,13 @@ async function handleRequest(request, env) {
   const SEND_TO = env?.SEND_TO || 'abhijeet.karmaker@gmail.com';
   
   if (!SENDGRID_API_KEY) {
-    return new Response(JSON.stringify({ error: 'SendGrid API key not configured' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({ error: 'SendGrid API key not configured' }), { 
+      status: 500, 
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      } 
+    });
   }
 
   if (request.method === 'OPTIONS') {
@@ -36,7 +42,13 @@ async function handleRequest(request, env) {
 
   const body = await request.json().catch(() => null);
   if (!body || !body.email || !body.message) {
-    return new Response(JSON.stringify({ error: 'Email and message are required' }), { status: 400 });
+    return new Response(JSON.stringify({ error: 'Email and message are required' }), { 
+      status: 400,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   }
 
   const { name = 'Anonymous', email, phone = '', message } = body;
@@ -78,9 +90,21 @@ async function handleRequest(request, env) {
   try {
     await sendSendGrid(ownerMessage, SENDGRID_API_KEY);
     await sendSendGrid(autoReply, SENDGRID_API_KEY);
-    return new Response(JSON.stringify({ success: true }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({ success: true }), { 
+      status: 200, 
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      } 
+    });
   } catch (err) {
-    return new Response(JSON.stringify({ error: 'Send failed', details: err.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({ error: 'Send failed', details: err.message }), { 
+      status: 500, 
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      } 
+    });
   }
 }
 
