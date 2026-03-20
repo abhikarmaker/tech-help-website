@@ -1,0 +1,7 @@
+name = "easytech-contact-worker"
+main = "cloudflare/contact-worker.js"
+compatibility_date = "2026-03-20"
+
+[vars]
+SEND_FROM = "abhijeet.karmaker@gmail.com"
+SEND_TO = "abhijeet.karmaker@gmail.com"
