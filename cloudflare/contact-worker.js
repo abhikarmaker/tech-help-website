@@ -1,12 +1,14 @@
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
-});
+export default {
+  async fetch(request, env, ctx) {
+    return handleRequest(request, env);
+  }
+};
 
-const SENDGRID_API_KEY = SAFETY_SHIM_SG_API_KEY; // replace with environment binding name
 const SEND_FROM = 'no-reply@easytechvancouver.ca';
 const SEND_TO = 'abhijeet.karmaker@gmail.com';
 
-async function handleRequest(request) {
+async function handleRequest(request, env) {
+  const SENDGRID_API_KEY = env.SENDGRID_API_KEY;
   if (request.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
