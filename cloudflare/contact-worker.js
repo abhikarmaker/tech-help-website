@@ -6,7 +6,7 @@ export default {
 
 async function handleRequest(request, env) {
   const SENDGRID_API_KEY = env?.SENDGRID_API_KEY;
-  const SEND_FROM = env?.SEND_FROM || 'no-reply@easytechvancouver.ca';
+  const SEND_FROM = env?.SEND_FROM || 'abhijeet.karmaker@gmail.com';
   const SEND_TO = env?.SEND_TO || 'abhijeet.karmaker@gmail.com';
   
   if (!SENDGRID_API_KEY) {
