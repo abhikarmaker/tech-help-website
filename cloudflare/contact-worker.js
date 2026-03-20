@@ -4,11 +4,10 @@ export default {
   }
 };
 
-const SEND_FROM = 'no-reply@easytechvancouver.ca';
-const SEND_TO = 'abhijeet.karmaker@gmail.com';
-
 async function handleRequest(request, env) {
   const SENDGRID_API_KEY = env?.SENDGRID_API_KEY;
+  const SEND_FROM = env?.SEND_FROM || 'no-reply@easytechvancouver.ca';
+  const SEND_TO = env?.SEND_TO || 'abhijeet.karmaker@gmail.com';
   
   if (!SENDGRID_API_KEY) {
     return new Response(JSON.stringify({ error: 'SendGrid API key not configured' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
@@ -77,8 +76,8 @@ async function handleRequest(request, env) {
   };
 
   try {
-    await sendSendGrid(ownerMessage);
-    await sendSendGrid(autoReply);
+    await sendSendGrid(ownerMessage, SENDGRID_API_KEY);
+    await sendSendGrid(autoReply, SENDGRID_API_KEY);
     return new Response(JSON.stringify({ success: true }), { status: 200, headers: { 'Content-Type': 'application/json' } });
   } catch (err) {
     return new Response(JSON.stringify({ error: 'Send failed', details: err.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
@@ -94,12 +93,12 @@ function escapeHtml(unsafe) {
     .replace(/'/g, '&#039;');
 }
 
-async function sendSendGrid(payload) {
+async function sendSendGrid(payload, apiKey) {
   const res = await fetch('https://api.sendgrid.com/v3/mail/send', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${SENDGRID_API_KEY}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify(payload),
   });
