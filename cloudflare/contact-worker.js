@@ -13,6 +13,8 @@ async function handleRequest(request, env) {
   if (!SENDGRID_API_KEY) {
     return new Response(JSON.stringify({ error: 'SendGrid API key not configured' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
   }
+
+  if (request.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
       headers: {
