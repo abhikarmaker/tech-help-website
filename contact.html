@@ -9,10 +9,46 @@
   <link rel="icon" type="image/png" sizes="48x48" href="images/easytech-logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f7f9fb; color:#152238;}
+    * {box-sizing:border-box;}
+    body {margin:0;font-family:'Roboto',sans-serif;background:#f4f7fa;color:#333;line-height:1.6;scroll-behavior:smooth;}
+
+    @keyframes gradientShift {0% {background-position:0% 50%;} 50% {background-position:100% 50%;} 100% {background-position:0% 50%;}}
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg,#1abc9c,#3498db,#9b59b6,#e74c3c);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color:#fff;
+      text-align:center;
+      padding:6rem 1rem;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-height:400px;
+    }
+    .hero::after {
+      content:"";
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: url('images/hero-tech-bg.png') center/cover no-repeat;
+      opacity:0.2;
+      z-index:0;
+    }
+    .hero img {height:250px;width:auto;margin-bottom:1rem;z-index:1;position:relative;}
+    .hero h1 {font-size:clamp(2rem,6vw,3rem);margin:0.5rem 0;z-index:1;position:relative;}
+    .hero .tagline {font-size:1.3rem;margin-bottom:1.5rem;opacity:0.9;z-index:1;}
+    .hero p {font-size:1.2rem;margin-bottom:1rem;opacity:0.9;z-index:1;position:relative;}
+    .hero .cta {background:#2ecc71;color:#fff;padding:1rem 1.6rem;border-radius:10px;text-decoration:none;font-weight:bold;transition:0.3s;z-index:1;position:relative;animation:pulse 2s infinite;}
+    .hero .cta:hover {background:#27ae60;}
+    .hero .cta-secondary {background:#34495e; margin-left:0.75rem;}
+    .hero .cta-secondary:hover {background:#2b4c70;}
+    @keyframes pulse {0%,100% {transform:scale(1);} 50% {transform:scale(1.05);}}
+    @media(max-width:600px){.hero img {height:120px;}.footer-container{flex-direction:column;align-items:center;text-align:center;}}
+
     .container {max-width:900px; margin:0 auto; padding:30px 18px;}
-    h1 {font-size:2rem; margin-bottom:0.5rem;}
-    p {margin:0.25rem 0 1rem;}
     .card {background:#fff; border:1px solid #dde5ef; border-radius:10px; padding:24px; box-shadow:0 6px 24px rgba(0,0,0,0.06);}
     label {display:block; margin:.75rem 0 .25rem; font-weight:700;}
     input, textarea {width:100%; padding:12px 14px; border:1px solid #ccd6e6; border-radius:8px; font-size:1rem;}
@@ -25,14 +61,16 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="senior-tech-support.html">Senior Support</a>
-      <strong>Contact</strong>
-    </div>
+  <header class="hero">
+    <img src="images/easytech-logo.png" alt="EasyTech Logo - Metro Vancouver Tech Support" loading="lazy">
     <h1>Contact EasyTech</h1>
-    <p>Send a request and get the email delivered to <strong>abhijeet.karmaker@gmail.com</strong>. The visitor gets an immediate confirmation response email.</p>
+    <p class="tagline">Send us your request and we’ll reply quickly.</p>
+    <p>Fast local IT support in Coquitlam, Burnaby, Surrey & Vancouver.</p>
+    <a class="cta" href="https://wa.me/18194342389">Message on WhatsApp</a>
+    <a class="cta cta-secondary" href="index.html">Go to Home</a>
+  </header>
+
+  <main class="container">
     <div class="card">
       <form id="contactForm" name="contact" method="POST" action="/api/contact">
         <input type="hidden" name="form-name" value="contact">
@@ -51,8 +89,9 @@
 
         <button type="submit">Send Request</button>
       </form>
-      <p class="small">Your request will be emailed to abhijeet.karmaker@gmail.com and you’ll receive an immediate acknowledgement message in your inbox.</p>
+      <p class="small">Your request will be sent to our support team and you’ll receive an immediate acknowledgement message in your inbox.</p>
     </div>
+  </main>
 
   <script>
     const form = document.getElementById('contactForm');
@@ -85,6 +124,5 @@
       form.querySelector('button').textContent = 'Send Request';
     });
   </script>
-  </div>
 </body>
 </html>
