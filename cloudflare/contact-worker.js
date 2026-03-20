@@ -8,8 +8,11 @@ const SEND_FROM = 'no-reply@easytechvancouver.ca';
 const SEND_TO = 'abhijeet.karmaker@gmail.com';
 
 async function handleRequest(request, env) {
-  const SENDGRID_API_KEY = env.SENDGRID_API_KEY;
-  if (request.method === 'OPTIONS') {
+  const SENDGRID_API_KEY = env?.SENDGRID_API_KEY;
+  
+  if (!SENDGRID_API_KEY) {
+    return new Response(JSON.stringify({ error: 'SendGrid API key not configured' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+  }
     return new Response(null, {
       status: 204,
       headers: {
